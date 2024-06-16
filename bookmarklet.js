@@ -3,17 +3,19 @@ javascript: (function () {
   const apiUrl = "https://api.github.com/repos/yismailuofa/cogito/issues";
   const token = "";
 
-  const title = document.title ?? "No title";
+  let title = document.title ?? "No title";
   const body = window.location.href ?? "No URL";
+
+  title = prompt("Confirm your issue's title:", title);
+
+  if (!title) {
+    return;
+  }
 
   const issueData = {
     title,
     body,
   };
-
-  if (!confirm("Are you sure you want to create an issue?")) {
-    return;
-  }
 
   fetch(apiUrl, {
     method: "POST",
