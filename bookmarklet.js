@@ -11,6 +11,10 @@ javascript: (function () {
     body,
   };
 
+  if (!confirm("Are you sure you want to create an issue?")) {
+    return;
+  }
+
   fetch(apiUrl, {
     method: "POST",
     headers: {
