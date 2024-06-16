@@ -1,7 +1,7 @@
 javascript: (function () {
   /** Replace these variables with your own values */
   const apiUrl = "https://api.github.com/repos/yismailuofa/cogito/issues";
-  const token = "YOUR_GITHUB_TOKEN";
+  const token = "";
 
   const title = document.title ?? "No title";
   const body = window.location.href ?? "No URL";
@@ -9,7 +9,6 @@ javascript: (function () {
   const issueData = {
     title,
     body,
-    labels: ["todo"],
   };
 
   fetch(apiUrl, {
